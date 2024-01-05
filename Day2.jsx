@@ -51,4 +51,3 @@
 
 // There is another folder in the root directory of your React project, named "public". in this folder, there is an index.html file.
 
-
