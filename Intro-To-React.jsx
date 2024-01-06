@@ -50,53 +50,6 @@
 
 
 
-
-
-//  Introduction of React
-
-//  React is a library that allows you to create a web application that is fast, efficient, and user-friendly. It is a JavaScript library that is used to build user interfaces. It is a library that allows you to create a web application that is fast, efficient, and user-friendly. It is a library that allows you to.
-
-//  React Owner --> FaceBook
-
-//  1. React is a JavaScript library for building user interfaces.
-
-// 2. React is used to build single-page applications.
-
-// 3. React allows us to create reusable UI Components.
-
-
-
-//  What is React ?
-
-// 1. React is a declarative, efficient and flexible JavaScript library for building user interfaces. it lets you compose complex UIs from small and isolated pieces of code called "Components".
-
-// 2. React, sometimes referred to as a Frontend javascript Framework, is a JavaScript library created by FaceBook.
-
-// 3. React is a tool for build UI components.
-
-
-
-//  How does React Work
-
-// Instead of manipulating the DOM directly, React uses virtual DOM to create a virtual representation of the DOM. This virtual DOM is then compared to the real DOM to determine if any changes need to be made. This comparison is done using a virtual DOM diff algorithm.
-
-
-// React.JS was first released in 2006. React.JS was first used in 2011 for FaceBook's Newsfeed feature.
-
-//  create-react-app includes built tools such as webpack, Babel and ESLint.
-
-//  FaceBook software engineer, "jordan walke", created React.Js.
-
-
-//  Declarative Approach :-  You tell the browser exactly what to do, instead of telling it what you need. the React declarative Approach abstracts that for us.
-
-// with declarative code, we tell JavaScript what we want to be done, and let JavaScript take care of performing the steps.
-
-
-
-
-
-
 //  ** CLASS-NOTES **
 
 
@@ -356,4 +309,25 @@
 //                 - The Virtual DOM is a smart and efficient way to update webpages. It allows React to make changes behind the scenes before applying them to the real DOM, resulting in faster and smoother updates to the user interface.
             
 //             Note : This is theory more on how things work behind the hood. As a developer, it’s good to know these things but you won’t be directly working with Virtual DOM ( This is for understanding )
+
+
+
+
+
+
+
+
+//  Class-Notes:-
+
+
+// JQuery was lunched 2005 this is a library.
+
+//  Commands :- ls / cd example1 / touch index.html / cd.. / cd example2 / touch index.html / mkdir example1 example2 <-- this command will create some directories/folder.
+
+// <script type="text/javascript src=\" > </script>
+
+
+//  in JavaScript create any DOM element thats called is (Imperative way of writing the coding)
+
+//  in HTML/React create any DOM element thats called is (Declarative way of writing the coding)
 

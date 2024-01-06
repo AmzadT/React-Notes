@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
+
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+<script type="text/babel">
+
+// var message = "I am Amzad Hussain";
+// var myClass = "container";
+// var myId = "child_container";
+// //  Interpolation
+// var element = (
+//    <div className={myClass} id={myId}>
+//        {message}
+//    </div> 
+// );
+
+
+// var element = <button onClick={clicked}></button>
+
+// function clicked() {
+//     alert("This button was clicked");
+// }
+
+
+
+var element = React.createElement("div",{}[
+    React.createElement("p",{},"paragraph-1"),
+    React.createElement("p",{},"paragraph-2")
+]);
+// Both are same
+var element = (
+    <div className="wrapper"> // i am give here className="wrapper";
+        <p>paragraph-1</p>
+        <p>paragraph-2</p>
+    </div>
+)
+// (This are called "Fragments").
+var element = (
+    <>
+        <p>paragraph-1</p>
+        <p>paragraph-2</p>
+    </>
+)
+
+var reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+ reactRoot.render(element);
+
+</script>
