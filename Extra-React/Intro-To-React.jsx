@@ -47,3 +47,4 @@
 //    1. Run all the code only once
 
 
+//  Webpack is a tool that helps developers bundle or put together different pieces of code, like JavaScript files, images, CSS styles, and more, into a single file or a few files that a web browser can understand and use to display a website or web application.
