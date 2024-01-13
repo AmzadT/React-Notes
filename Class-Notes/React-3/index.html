@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>setState Async Behaviour</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+        <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+
+        // 1. **setState is kind of async**
+        // 2. **setState batches updates**
+        // 3. **setState can take updater functions, which will use the value from the react store internally**
+
+        // - **`setState` is kind of async**
+            
+        //     Let’s take a simple counter example
+
+        <script type="text/babel">
+        function Counter() {
+        const [count, setCount] = React.useState(0)
+
+        const handleClick = () => {
+            setCount(count + 1)
+            // when you do a console.log(count) here; you'll observe count value hasn't been updated.
+            console.log(count)
+        }
+        return (
+            <div>
+            <p>Count: {count}</p>
+            <button onClick={handleClick}>Increment</button>
+            </div>
+        )
+        }
+
+        const rootElement = document.getElementById("root")
+        const reactRoot = ReactDOM.createRoot(rootElement)
+        reactRoot.render(<Counter />)
+        </script>
+    </body>
+    </html>
