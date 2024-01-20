@@ -28,11 +28,11 @@
 // );
 
 
-// var element = <button onClick={clicked}></button>
-
-// function clicked() {
-//     alert("This button was clicked");
-// }
+// button.addEventListener("click",clickHandler);
+var element = <button onClick={clicked}>Click</button>
+function clicked() {
+    alert("This button was clicked");
+}
 
 
 
@@ -47,7 +47,7 @@ var element = (
         <p>paragraph-2</p>
     </div>
 )
-// (This are called "Fragments").
+// (This is called "Fragments").
 var element = (
     <>
         <p>paragraph-1</p>

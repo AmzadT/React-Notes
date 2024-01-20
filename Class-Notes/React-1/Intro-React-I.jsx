@@ -73,7 +73,9 @@
 
 
 
-// # Pre Class Notes
+// ** Pre Class Notes **
+
+
 
 // - Intro to react
 // - Framework vs Library
@@ -84,7 +86,10 @@
 //         - Virtual DOM
 //         - Batch updates
 
-// # React Intro :
+
+
+// # React Intro :-
+
 
 // React is a JavaScript library that's your best friend when it comes to building cool user interfaces (UIs) for web applications. It's a creation of Facebook and is loved by developers for making UI building a breeze. It lets you create reusable UI components and manage how data is displayed and updated on web pages. And the good news? It keeps getting better with new features!
 
@@ -99,6 +104,8 @@
 // - **Library**:
 //     - It's a collection of ready-to-use code snippets that you can call upon.
 //     - *Example*: Imagine a library as a toolbox. You pick the tools you need, when you need them.
+
+
 // - **Framework**:
 //     - It's a structured template that tells you how to build your application.
 //     - *Example*: It’s like a recipe. You follow the steps and add your ingredients to cook up an app.
@@ -113,9 +120,10 @@
     
 //     A library is a collection of reusable code that provides specific functionality. You can think of it as a set of tools that you can choose to use in your project. You are in control of when and how you use these tools. Libraries help you avoid rewriting common functionality and save time.
     
+
 //     ## **Framework** :
     
-//     A framework, on the other hand, provides a structure and a set of rules for building applications. You can think of it as a blueprint that guides you on how to build your project. When using a framework, you need to follow its conventions and design patterns, and it often dictates the application's structure. In essence, a framework provides a foundation, and you fill in the specific details of your application.
+//  A framework, on the other hand, provides a structure and a set of rules for building applications. You can think of it as a blueprint that guides you on how to build your project. When using a framework, you need to follow its conventions and design patterns, and it often dictates the application's structure. In essence, a framework provides a foundation, and you fill in the specific details of your application.
     
 //     To summarise, a library is like a set of tools you can use in your project as needed, while a framework is a blueprint that provides a structure and rules for your project.
     
@@ -123,8 +131,9 @@
     
 //     ## **Library** :
     
-//     Let's say you want to build a house. A library would be like buying pre-made building materials like bricks, lumber, nails, and roofing shingles that you can use to build your house. You have control over how you use those materials, and you can use them to build the house you want, but you have to do all the work yourself.
+//   Let's say you want to build a house. A library would be like buying pre-made building materials like bricks, lumber, nails, and roofing shingles that you can use to build your house. You have control over how you use those materials, and you can use them to build the house you want, but you have to do all the work yourself.
     
+
 //     ## **Framework** :
     
 //     If you happened to order some furniture on e-commerce ( any DIY kit ) website. Let’s take an example of cupboard. It comes with all the necessary parts. There will be a manual which contains all the instructions on how to assemble it. You have less control over how the cupboard looks and functions, but it's easier and faster to assemble since you're following a pre-set structure and guidelines.
@@ -138,16 +147,18 @@
 
 // React shines bright for a few solid reasons:
 
-// - **Ease of Development**:
+// - **Ease of Development**:-
+
 //     - React lets you create reusable components, making development quicker and collaborative fun. Check the comparison below to see how React simplifies code compared to Vanilla JavaScript:
         
 //         ![Screenshot 2022-11-11 at 4.38.49 PM.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/ff94b4dd-cb13-4ede-8019-d6a8215bf3d5/e5103672-7e05-43fa-8812-6bd25346278b/Screenshot_2022-11-11_at_4.38.49_PM.png)
         
-// - **Single Page Applications (SPAs)**:
+// - **Single Page Applications (SPAs)**:-
+
 //     - Think of a Single Page Application like using an advanced remote control for your TV. In a traditional website, every time you click a button or a link, it's like changing the channel: the screen goes blank for a second, and then the new channel (or page) loads. With an SPA, it's like switching from live TV to a smart TV where you can smoothly scroll through options, preview shows, and choose what you want to watch without any delay or "blackout" screen. Everything happens seamlessly on the same screen.
+
 //     - React is your go-to buddy for building SPAs as it handles dynamic updates like a champ, ensuring a smooth user experience.
-//     - ************************Click here if you need more detailed explanation about SPA************************
-        
+
         
 //         ****React is a JavaScript library that's excellent for building SPAs. But what is Single Page Application or in short SPA
         
@@ -158,6 +169,7 @@
 //         ### **How Does SPA Work?**
         
 //         In traditional websites, every action usually involves a request to the server, and the server sends back an entirely new page. This is like the "blackout" when changing channels. 
+
 //         Say in a traditional Multi Page Application when you click on `About` link, a new request is sent to server and server has to send a completely new page `about.html`.  This process can cause delays and result in a less responsive user experience.
         
 //         ![Class.pptx (3).png](https://prod-files-secure.s3.us-west-2.amazonaws.com/ff94b4dd-cb13-4ede-8019-d6a8215bf3d5/9b763f95-f727-49de-8fa2-f434d847c1bb/Class.pptx_(3).png)
@@ -168,13 +180,15 @@
         
 //         **In a nutshell** : 
         
-//         - Single Page Applications (SPAs) are web applications that load a single HTML page( index.html ) and dynamically update its content as the user interacts with the app. SPAs load and display content much faster, providing a smoother and more engaging experience
+//         - Single Page Applications (SPAs) are web applications that load a single HTML page( index.html ) and dynamically update its content as the user interacts with the app. SPAs load and display content much faster, providing a smoother and more engaging experience.
+
 //         - React makes building SPAs more accessible
-// - **Fast Performance**:
+
+// - **Fast Performance**:-
 //     - React's secret sauce for speed includes Batch Updates and Virtual DOM.
 //         - **Batch Updates**: React waits to group together multiple updates, making the process more efficient, like jotting down a shopping list before heading to the store.
+
 //         - **Virtual DOM**: Instead of making direct changes to the actual webpage (DOM), React uses a lighter copy called Virtual DOM to track changes, making updates faster and smoother.
-//         - ************************Click here if you need more detailed explanation about Batch updates and Virtual DOM************************
             
 //             React is fast performance wise but how ?
             
@@ -256,7 +270,7 @@
 //                 - Based on user interaction, if the updates have to be made. Instead of doing one update at a time. React batches all the updates. Batching is super useful for performance
 //                 - The Virtual DOM is a smart and efficient way to update webpages. It allows React to make changes behind the scenes before applying them to the real DOM, resulting in faster and smoother updates to the user interface.
             
-//             Note : This is theory more on how things work behind the hood. As a developer, it’s good to know these things but you won’t be directly working with Virtual DOM ( This is for understanding )
+// Note : This is theory more on how things work behind the hood. As a developer, it’s good to know these things but you won’t be directly working with Virtual DOM ( This is for understanding )
 
 
 
@@ -265,7 +279,8 @@
 
 
 
-//  Class-Notes:-
+// ** CLASS-NOTES **
+
 
 
 // JQuery was lunched 2005 this is a library.
@@ -279,3 +294,7 @@
 
 //  in HTML/React create any DOM element thats called is (Declarative way of writing the coding)
 
+
+// JSX --> syntax extensions to JavaScript
+
+// JSX = JS + HTML

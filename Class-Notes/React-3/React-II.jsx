@@ -402,3 +402,255 @@ var Div2 = React.createElement("div",{}, null);
 // 3. setState can take updater functions, which will use the value from the React store internally.
 
 
+
+
+
+
+
+
+
+
+
+
+// Closures in JavaScript are a fundamental concept that stems from the language's ability to have functions within functions. It's like a backpack that a function carries around with it, containing all the variables it had access to when it was created. This enables us to have "private" variables which can be manipulated even after the outer function has finished executing. Let’s break down the topic step by step:
+
+// 1. **Scope and Environment :**
+//     - **Scope:** In JavaScript, each function has its own scope, meaning it has access to its own variables and the variables of outer functions.
+//     - **Environment:** When a function is created, it saves the environment — the variables it has access to at that point in time.
+// 2. **Nested Functions :**
+//     - Functions defined inside other functions have access to the outer function’s variables, creating a scope chain.
+// 3. **Creating a Closure:**
+//     - A closure is formed when you have a nested function that accesses variables from an outer function. Even after the outer function has run, the inner function remembers the variables from the outer scope.
+// 4. **Example:**
+
+// ```jsx
+// function createCounter() {
+//     let count = 0;  // a variable in the outer scope
+
+//     function increment() {  // a nested function
+//         count++;  // accessing outer scope variable
+//         console.log(count);
+//     }
+
+//     return increment;  // returning the nested function
+// }
+
+// let counter = createCounter();  // store the returned function in a variable
+// counter();  // Output: 1
+// counter();  // Output: 2
+
+// ```
+
+// - In this code:
+//     - `createCounter` is an outer function with a variable `count`.
+//     - `increment` is a nested function that accesses and modifies `count`.
+//     - We return `increment` from `createCounter`, and every time we call `counter()`, it remembers the value of `count` and increments it.
+// 1. **Benefits of Closures:**
+//     - **Privacy:** Closures help in creating private variables which can prevent accidental changes from the outside code.
+//     - **Persistence:** The variables in the closure hold their value and aren’t reset each time the function is called.
+//     Some Practical application in real world include `debouncing` `throttling` etc
+// 2. **Understanding the Magic:**
+//     - The magic is in the concept of scope and environment. Even though `createCounter` has finished executing, the `increment` function still has access to `count` because it remembers its scope environment.
+
+// A better way to understand this would be to use https://pythontutor.com/render.html#mode=display 
+
+// - Go to the above link
+// - Paste the above code snippet
+// - Click on Visualize Execution
+
+// ---
+
+// # Event Handling in React :
+
+// Event handling in React is essentially about managing how your application responds to user interactions, like clicks, form input, or mouse movements. In JavaScript, we typically interact with the Document Object Model (DOM) to handle these events. However, React wraps these native events with instances of the SyntheticEvent class to ensure events have consistent properties across all browsers.
+
+// Here's how you break it down:
+
+// 1. **Event Naming Convention**:
+//     - In React, the naming convention for event handlers is camelCase rather than lowercase.
+//     - Example: `onClick` instead of `onclick`, `onChange` instead of `onchange`.
+// 2. **Event Handler Assignment**:
+//     - In React, you assign event handlers as properties on DOM elements.
+//     - Example: `<button onClick={handleClick}>Click me</button>`.
+// 3. **Defining Event Handlers**:
+//     - Event handlers are usually defined as methods in your component class or as functions in functional components.
+
+// ### Practical Examples
+
+// **1. Handling Click Events :**
+
+// ```jsx
+// <!DOCTYPE html>
+// <html lang="en">
+//   <head>
+//     <meta charset="UTF-8" />
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+//     <title>Click Event Handler Example</title>
+//   </head>
+//   <body>
+//     <div id="root"></div>
+//     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+//     <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+//     <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+//     <script type="text/babel">
+//       // Component called ClickExample which has button with click event and click handler
+//       function ClickExample() {
+//         function handleClick() {
+//           console.log(
+//             "Life is like a box of chocolates, you never know what you are gonna get"
+//           )
+//         }
+
+//         return <button onClick={handleClick}>Click me</button>
+//       }
+
+//       const rootElement = document.getElementById("root")
+//       const reactRoot = ReactDOM.createRoot(rootElement)
+//       reactRoot.render(<ClickExample />)
+//     </script>
+//   </body>
+// </html>
+// ```
+
+// In this example, we're creating a button that prints a  message to console each time it's clicked. The `handleClick` function is called each time the button is clicked.
+
+// **2. Handling Input Changes :**
+
+// ```jsx
+// <!DOCTYPE html>
+// <html lang="en">
+//   <head>
+//     <meta charset="UTF-8" />
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+//     <title>Input and Change Event</title>
+//   </head>
+//   <body>
+//     <div id="root"></div>
+//     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+//     <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+//     <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+//     <script type="text/babel">
+//       // Component called InputExample which has input with change event and change event handler
+//       function InputExample() {
+//         function handleChange(event) {
+//           console.log("Input value changed to:", event.target.value)
+//         }
+//         return <input type="text" onChange={handleChange} />
+//       }
+
+//       const rootElement = document.getElementById("root")
+//       const reactRoot = ReactDOM.createRoot(rootElement)
+//       reactRoot.render(<InputExample />)
+//     </script>
+//   </body>
+// </html>
+// ```
+
+// Here, whenever the user types something into the input box, the new value is logged to the console.
+
+// These examples should give beginners a simple understanding of how events can be handled in React, by executing functions in response to user interactions without delving into state management yet.
+
+// **React Documentation for Synthetic Events**
+
+// For a detailed list of synthetic events in React, you might want to refer to the [React documentation on Synthetic Events](https://react.dev/learn/responding-to-events). Here, you'll find a comprehensive list of supported events, how to use them, and the properties available on the SyntheticEvent instances.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// <!DOCTYPE html>
+// <html lang="en">
+//   <head>
+//     <meta charset="UTF-8" />
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+//     <title>React Template</title>
+//   </head>
+//   <body>
+//     <div id="root">
+//     </div>
+//   </body>
+//   <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+//   <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+//   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+//   <script type="text/babel">
+//     // My Code goes here;
+//   </script>
+// </html>
+
+
+
+
+// Task 1 :
+// div#root ( it'll be your root element )
+// I want you to create a
+// div element ( using React.createElement )
+// it should have id "container"
+// it should have class "main"
+// it should have 3 children
+// child1 - h3 - Learning React
+// child2 - p - Day 2
+// child3 - button - Click Me!
+// Task 2 :
+// div#root ( it'll be your root element )
+// I want you to create a
+// div element ( using JSX )
+// it should have id "container"
+// it should have class "main"
+// it should have 3 children
+// child1 - h3 - Learning React
+// child2 - p - Day 2
+// child3 - button - Click Me! - Clicking on this button should print "button clicked..." to console
+// Task 3 :
+// Create a React Application :
+
+// This application should have the following components.
+// Navbar Component
+// div with id navbar with 2 children elements
+// child1 is a p element with text "navbar"
+// child2 is another p element with text "links will be displayed here"
+// Main Component
+// Fragment wrapper
+// it should have a p element with text "main content"
+// Footer Component
+// div with id footer
+// p element with text Footer
+// Task 4 :
+// Create a react application
+
+// App component which should render the following components
+// Navbar
+// some image on left side of navbar as logo
+// list of a tags on right side of navbar
+// Main
+// Sidebar
+// MenuItem
+// p which should have some text like "home","explore","categories"
+// ProductsContainer
+// ProductItem
+// image (placeholder image using img element)
+// p element - product name
+// h3 element - product price
+// ProductItem
+// image (placeholder image using img element)
+// p element - product name
+// h3 element - product price
+// ProductItem
+// image (placeholder image using img element)
+// p element - product name
+// h3 element - product price
+// ProductItem
+// image (placeholder image using img element)
+// p element - product name
+// h3 element - product price
+// Footer
+// div with id footer
+// list of links (dummy links)
