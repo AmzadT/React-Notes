@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React Template</title>
+
+  <style>
+    .navbar {
+      background-color: cornflowerblue;
+      font-family: sans-serif;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+<script type="text/babel">
+  //  These are the functions called 'Component'.
+  function Navbar(props) {
+    return (
+      <div className="navbar">
+        Navbar
+        <img src={props.logo} alt="logo" />
+      </div>
+    )
+  }
+
+  // Destructuring Here
+  // function Navbar({logo}){
+  //     return(
+  //         <div className="navbar">
+  //             Navbar
+  //             <img src={logo} alt="logo"/>
+  //         </div>
+  //     )
+  // }
+
+  function Sidebar(props) {
+    return (
+      <div>
+        <p>SideBar - {props.count}</p>
+        <p>isVisible - {props.isVisible ? "Yes" : "No"}</p>
+      </div>
+    )
+  }
+
+  // Destructuring Here
+  // function Sidebar({count, isVisible}){
+  //     return(
+  //         <div>
+  //         <p>SideBar - {count}</p>
+  //         <p>isVisible - {isVisible ? "Yes" : "No"}</p>
+  //         </div>
+  //     )
+  // }
+
+  function Main(props) {
+    return (
+      <div>
+        {props.array}
+        {props.obj}
+      </div>
+    )
+  }
+
+  // Destructuring Here
+  // function Main({array, obj}) {
+  //     console.log(array, obj);
+
+  //     return (
+  //         <div>
+  //            {props.array}
+  //            {props.obj}
+  //         </div>
+  //     )
+  // }
+
+  // Destructuring Here...
+  function Footer({print}) {
+    return (
+      <div>
+        <p>Footer</p>
+        <button onClick={Print}>Click & Print</button>
+      </div>
+    )
+  }
+
+
+  function App() {
+
+    function Print() {
+      alert("Print");
+    }
+
+    return (
+      <>
+        <Navbar logo="https://students.masaischool.com/static/media/masai-logo.e5c8801d4f26d2da036ec9e4b93cb202.svg" />
+        <SideBar count="100" isVisible={true} />
+        <Main array={[1, 2, 3, 4, 5]} obj={{ name: "Amzad" }} />
+        <Footer print={Print} />
+      </>
+    );
+  }
+
+  var reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+  reactRoot.render(<App />);
+</script>
+
+</html>

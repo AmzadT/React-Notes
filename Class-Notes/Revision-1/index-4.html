@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React Template</title>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
+
+<script type="text/babel">
+
+  function SuperheroCard(props) {
+    return (
+        <>
+        <h1>Avengers</h1>
+        <img src={props.logo} alt="logo" />
+        <p>Married :-{props.isMarried}</p>
+        <p>{props.array}</p>
+        <p>{props.obj}</p>
+        </>
+    )
+  }
+
+  // Pass the following props here and the same should be displayed in Superhero Card
+  // name - String
+  // imageUrl - String
+  // isMarried - Boolean
+  // Superpowers - Array
+  // address - Object
+
+  function App() {
+    return (
+      <>
+        <SuperheroCard logo="https://cdn.britannica.com/60/182360-050-CD8878D6/Avengers-Age-of-Ultron-Joss-Whedon.jpg" isMarried={true} array={["Hulk","Thor","Vision","Captain-Marvel"]} obj={{address:"America"}}/>
+      </>
+    );
+  }
+
+  var reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+  reactRoot.render(<App />);
+</script>
+
+</html>
+

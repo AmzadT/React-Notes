@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving API</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+//  Vite Installation :-
+
+// npm create vite@latest demo-app -- --template react
+// npm install
+// npm run dev
+// npm install vite@latest demo-app --template react
+
+
+
+## Task 1 : Complete the missing functionality 
+
+```
+import { useState } from "react";
+
+function App() {
+  const [data, setData] = useState([]);
+
+  function fetchAndUpdateData() {
+    // Clicking on the button Get and Display post should make an API request to https://jsonplaceholder.typicode.com/posts?_limit=5
+    // Get the response display as a card with id,title,body
+    // use data to save the response in local state
+  }
+
+  return (
+    <>
+      <h1>
+        Clicking on this button should fetch the data from JSON Placeholder API{" "}
+      </h1>
+      <button onClick={fetchAndUpdateData}>Get and Display Post</button>
+    </>
+  );
+}
+
+export default App;
+```Ed
+
+
+
+
+
+
+
+## Task 2 : Make an API call, get the data and display the data without any data as soon as the component renders;
+
+```
+import { useState } from "react";
+
+function App() {
+  const [data, setData] = useState([]);
+
+  function fetchAndUpdateData() {
+
+  }
+
+  return (
+    <>
+      <h1>
+        Clicking on this button should fetch the data from JSON Placeholder API{" "}
+      </h1>
+    </>
+  );
+}
+
+export default App;
+```
+
+
+
+
+
+
+
+import { useState, useEffect } from "react";
+
+// Make an API Request, get the data
+// and save the data in local state as soon as component mounts using useEffect Hook
+function App() {
+  const [data, setData] = useState([]);
+
+  async function fetchAndUpdateData() {
+    try {
+    } catch (error) {
+      console.log(error);
+    }
+  }
+<!-- 
+  return (
+    <>
+      {data.map((post) => (
+        <div
+          key={post.id}
+          style={{ border: "1px solid black", margin: "10px", padding: "10px" }}
+        >
+          <p>{post.id}</p>
+          <p>{post.title}</p>
+        </div>
+      ))}
+    </>
+  );
+} -->
+
+export default App;
+
+
+
+
+
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+
+import App from "./App";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
