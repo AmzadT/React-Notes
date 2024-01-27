@@ -1258,3 +1258,71 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+### CLASS-NOTES ###
+
+
+
+
+- State management :- Store any information that's keep changing which is related to UI that's basicly state management.
+
+
+- In Terminal
+  - touch Notes.md
+  - code Notes.md
+
+
+# Lifecycle of React Component
+
+# Lifecycle :-
+  - 1. Mount Phase / Mount Event
+  - 2. Update Phase / Update Event
+  - 3. Unmount Phase / Unmount Event
+
+1. The first time when the component is mounted/rendering/atach to the UI/DOM/Display that's phase is called mount pahse.
+
+2. When the any component get's updated using setState method of the component that's phase is called update phase.
+  - setState :- it does two(2) things.
+    1. updates the value of count property
+    2. re-render the component
+
+
+
+- npm create vite@latest my-app -- -- template react
+  - cd my-app
+  - npm install
+  - npm run dev
+
+
+
+# Side Effects
+
+  - What are side effects ?
+
+    1. Any operation that requires your react component to go outside of it's scope and intract with outside world, these are called "side effects". side effects are unpredictable.
+
+    2. How i handle side effects matters ? Not handling side effects properly can lead to performance issues / bigger problems in your application.
+
+    3. Rules of React components
+       - Rendering process should never be Blocked by side effects.
+       - But we still have to use/perform side effects (get the data) How ?
+       - By using `useEffect` hook method from React, you can perform/use side effects properly.
+
+`useEffect` Syntax :-
+  
+useEffect(function(){
+
+},[])  // Empty / Dependancy Array
+
+It takes two(2) Argument :- useEffect(callBackFunction, DependancyArray)
+
+
+The way `useEffect` handles the side effects is by calling side effects after the initial rendering is completed.
