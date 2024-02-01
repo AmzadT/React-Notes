@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>State Upliftment</title>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+</html>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+
+
+
+<script type="text/babel">
+
+    const MyButton = (props) => {
+        
+        return(
+            <button onClick= {props.handleCount}> Count : {props.count}</button>
+        )
+    }
+    
+    function App() {
+        
+        const [count, setCount] = React.useState(1);
+
+        const handleCount = () => {
+            setCount(count + 1);
+        }
+        
+        return (
+            <>
+                <MyButton count={count} handleCount={handleCount}></MyButton>
+                <MyButton count={count} handleCount={handleCount}></MyButton>
+                <MyButton count={count} handleCount={handleCount}></MyButton>
+            </>
+        )
+    }
+
+    const reactRoot = ReactDOM.createRoot(document.getElementById("root"))
+    reactRoot.render(<App />)
+
+</script>

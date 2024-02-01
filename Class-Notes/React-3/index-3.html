@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controlled Component</title>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+</html>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+
+
+
+<script type="text/babel">
+
+    function App() {
+
+        const [inputValue, setInputValue] = React.useState("");
+
+        const handleChange = (event) => {
+            setInputValue(event.target.value);
+        }
+
+        const clearSearchBar = () => {
+            setInputValue("");
+        }
+
+        return (
+            <>
+                <h1>Count : {amount}</h1>
+                <input placeholder="Search Something..." onChange={handleChange} value={inputValue}></input>
+                <hr />
+                <br />
+
+                <h3>User is Searching : {inputValue}</h3>
+                <button onClick={clearSearchBar}>Clear-Search-Bar</button> 
+            </>
+        )
+    }
+
+    const reactRoot = ReactDOM.createRoot(document.getElementById("root"))
+    reactRoot.render(<App />)
+
+</script>

@@ -1,44 +1,100 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>setState Async Behaviour</title>
-    </head>
-    <body>
-        <div id="root"></div>
-        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-        <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
-        <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+<html lang="en">
 
-        // 1. **setState is kind of async**
-        // 2. **setState batches updates**
-        // 3. **setState can take updater functions, which will use the value from the react store internally**
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>State Management</title>
+</head>
 
-        // - **`setState` is kind of async**
-            
-        //     Let’s take a simple counter example
+<body>
+    <div id="root"></div>
+</body>
 
-        <script type="text/babel">
-        function Counter() {
-        const [count, setCount] = React.useState(0)
+</html>
 
-        const handleClick = () => {
-            setCount(count + 1)
-            // when you do a console.log(count) here; you'll observe count value hasn't been updated.
-            console.log(count)
-        }
-        return (
-            <div>
-            <p>Count: {count}</p>
-            <button onClick={handleClick}>Increment</button>
-            </div>
-        )
-        }
 
-        const rootElement = document.getElementById("root")
-        const reactRoot = ReactDOM.createRoot(rootElement)
-        reactRoot.render(<Counter />)
-        </script>
-    </body>
-    </html>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+
+
+<script type="text/babel">
+    // function App() {
+
+    //     const setArray = React.useState(20);  // (Initial-Value)
+    //     console.log(setArray);
+    //     setArray[1](50)  // (Update the Value of setArray)
+    //     setArray[1](Math.random() * 100) 
+
+    //     const handleClick = ()=>{
+    //         console.log("clicked");
+    //     }
+       
+    //     return (
+    //         <>
+    //            <p>setArray : {setArray[0]}</p>
+    //            <button onClick={handleClick}>Increase setArray</button>
+    //         </>
+    //     )
+    // }
+
+
+
+    // function App() {
+    // // Update the setArray each time by 5.
+
+    // const setArray = React.useState(20);  
+    // console.log(setArray);
+
+    // setArray[1](setArray[0] + 5)  
+
+    // const handleClick = ()=>{
+    //     console.log("clicked");
+    // }
+
+    // return (
+    //     <>
+    //     <p>setArray : {setArray[0]}</p>
+    //     <button onClick={handleClick}>Increase setArray</button>
+    //     </>
+    // )
+    // }
+
+
+
+
+
+
+    function App() {
+
+    const [count, setCount] = React.useState(0);
+    const [balance, setBalance] = React.useState(10000);  
+
+    const handleClick = ()=>{
+        setCount(count + 5);
+    }
+
+    return (
+        <>
+        <h1>Count : {count}</h1>
+        <button onClick={handleClick}>Increase setArray</button>
+        <hr />
+        <br/>
+
+        <h3>Balance : {balance}</h3>
+        <button onClick = {function(){
+            setBalance(balance - 1000)
+        }}>WithDraw-1000</button>
+
+        <button onClick = {() =>{
+            setBalance(balance + 2000)
+        }}>DepoSite-2000</button>
+        </>
+    )
+    }
+
+    const reactRoot = ReactDOM.createRoot(document.getElementById("root"))
+    reactRoot.render(<App />)
+</script>
